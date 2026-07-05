@@ -1,0 +1,656 @@
+{
+  "type": "pixiv",
+  "groups": {
+    "female": [
+      {
+        "id": "c9486b44e1854107a682f1a863c792f3",
+        "slug": "loli",
+        "name": "Loli"
+      },
+      {
+        "id": "1affef22724d4da98dcb0f0297c099cc",
+        "slug": "mature",
+        "name": "Mature"
+      },
+      {
+        "id": "06621c19703349cd8d7a6fb5b987315c",
+        "slug": "blonde_hair",
+        "name": "Blonde Hair"
+      },
+      {
+        "id": "27e8375edfd949b0b2205ac72f5b7e08",
+        "slug": "twintails",
+        "name": "Twintails"
+      },
+      {
+        "id": "9f35dbe056fa4f84bcf978409315b0b5",
+        "slug": "ponytail",
+        "name": "Ponytail"
+      },
+      {
+        "id": "287cb1b803f847c08a41eb1dee895df7",
+        "slug": "long_hair",
+        "name": "Long Hair"
+      },
+      {
+        "id": "82dd47cb77a8473a9babe0404f0d1734",
+        "slug": "short_hair",
+        "name": "Short Hair"
+      },
+      {
+        "id": "a003c7cb4adf4eea9e8bd7f710269646",
+        "slug": "bangs",
+        "name": "Bangs"
+      },
+      {
+        "id": "356b19ca04e14f559f05af55efcc39d6",
+        "slug": "ahoge",
+        "name": "Ahoge"
+      },
+      {
+        "id": "2cb46f26267a4759b48029463e9d9830",
+        "slug": "school_uniform",
+        "name": "School Uniform"
+      },
+      {
+        "id": "14e06dd8a644448398d1e544b266ebb2",
+        "slug": "swimsuit",
+        "name": "Swimsuit"
+      },
+      {
+        "id": "cb9e0b61d8114a8dbb7d9746f29e51cc",
+        "slug": "bikini",
+        "name": "Bikini"
+      },
+      {
+        "id": "870d513d11334e43919cd0dfc870576b",
+        "slug": "kimono",
+        "name": "Kimono"
+      },
+      {
+        "id": "642fb4c6431745299c0c7b58bfa0e28d",
+        "slug": "yukata",
+        "name": "Yukata"
+      },
+      {
+        "id": "316cb4f43a02480891b5267d68cdcb92",
+        "slug": "maid",
+        "name": "Maid"
+      },
+      {
+        "id": "fb29a87f8fb6466c96ae50c68476facc",
+        "slug": "nurse",
+        "name": "Nurse"
+      },
+      {
+        "id": "10d633e1a2e04f10a15f992073d436e1",
+        "slug": "bunny_suit",
+        "name": "Bunny Suit"
+      },
+      {
+        "id": "d27b4118ef5d4443852efb563812c7cf",
+        "slug": "sailor_uniform",
+        "name": "Sailor Uniform"
+      },
+      {
+        "id": "1490eb8f63fb4fb695bd8fe6d42033ce",
+        "slug": "chinese_dress",
+        "name": "Chinese Dress"
+      },
+      {
+        "id": "6f4e9afdb62d4f47bd3a67adbc7376cf",
+        "slug": "fox_ears",
+        "name": "Fox Ears"
+      },
+      {
+        "id": "03d07bbcf4f3496686aff533ba743fe8",
+        "slug": "cat_ears",
+        "name": "Cat Ears"
+      },
+      {
+        "id": "079a4c51cc0f446cb0cc7877eb3ab630",
+        "slug": "animal_ears",
+        "name": "Animal Ears"
+      },
+      {
+        "id": "eb525d2b72c94ee6b9fb597849c72e7b",
+        "slug": "horns",
+        "name": "Horns"
+      },
+      {
+        "id": "2201b01f88d04ffa84474d380e2fed36",
+        "slug": "halo",
+        "name": "Halo"
+      },
+      {
+        "id": "496d1560b3c74399a504c0da9f20c7e8",
+        "slug": "wings",
+        "name": "Wings"
+      },
+      {
+        "id": "5617d6f1310b466dbd57d62d642cbab3",
+        "slug": "tail",
+        "name": "Tail"
+      },
+      {
+        "id": "12968848ed63481891665eb443c4d26d",
+        "slug": "heterochromia",
+        "name": "Heterochromia"
+      },
+      {
+        "id": "9e232ba1ab4d4ab297cdd14534f4715d",
+        "slug": "glasses",
+        "name": "Glasses"
+      },
+      {
+        "id": "c2f39d78804e4a75b03cf806bbed1102",
+        "slug": "tattoo",
+        "name": "Tattoo"
+      },
+      {
+        "id": "4cc6dd5954b940e69568dde75b2b1d7f",
+        "slug": "blush",
+        "name": "Blush"
+      },
+      {
+        "id": "603ffa2ac2ea44659749dd80a4adc565",
+        "slug": "tears",
+        "name": "Tears"
+      },
+      {
+        "id": "f332c281926a4ed1809060dfa1500ffe",
+        "slug": "smile",
+        "name": "Smile"
+      },
+      {
+        "id": "a3cfeda5f4c24f4a99e54b31d4a63e9d",
+        "slug": "open_mouth",
+        "name": "Open Mouth"
+      },
+      {
+        "id": "c629e2a920bf4e7ba75f638f15dbf9a6",
+        "slug": "tongue_out",
+        "name": "Tongue Out"
+      },
+      {
+        "id": "354b6856912045388ef33aa664db4260",
+        "slug": "looking_at_viewer",
+        "name": "Looking at Viewer"
+      },
+      {
+        "id": "bebb9fa3eefe49b395ab1dbd5d5f338b",
+        "slug": "looking_away",
+        "name": "Looking Away"
+      },
+      {
+        "id": "277f574e4b5a4720a5154dcf3b87d631",
+        "slug": "closed_eyes",
+        "name": "Closed Eyes"
+      },
+      {
+        "id": "a9b6fc1b1d8b466aa435849be4cdb75d",
+        "slug": "naval",
+        "name": "Naval"
+      },
+      {
+        "id": "799a2b9a5bbe4b1fa0c5f9e2a0ca2b7b",
+        "slug": "thighs",
+        "name": "Thighs"
+      },
+      {
+        "id": "95bc783cac604072bcb65beb46b1f56f",
+        "slug": "armpits",
+        "name": "Armpits"
+      },
+      {
+        "id": "e06ff094a3424011b22f8ebf07c8c896",
+        "slug": "midriff",
+        "name": "Midriff"
+      },
+      {
+        "id": "0b5d352b886b4eb4a2952fd97ce01cd0",
+        "slug": "cleavage",
+        "name": "Cleavage"
+      },
+      {
+        "id": "a78917a3a82a4e15abb4a32c3389d98f",
+        "slug": "holding",
+        "name": "Holding"
+      },
+      {
+        "id": "414b455645244f3394722bd2e9c29245",
+        "slug": "sitting",
+        "name": "Sitting"
+      },
+      {
+        "id": "fe8d32a0bced4fdbba3dbc80c97cf8b6",
+        "slug": "standing",
+        "name": "Standing"
+      },
+      {
+        "id": "abb03140a8d64423a29630a6269be499",
+        "slug": "lying",
+        "name": "Lying"
+      }
+    ],
+    "male": [
+      {
+        "id": "f12f872ecadd44b9954dcec7e6960993",
+        "slug": "boy",
+        "name": "Boy"
+      },
+      {
+        "id": "c068a83458914caeb2f23a9d6a5fbe8f",
+        "slug": "man",
+        "name": "Man"
+      },
+      {
+        "id": "891dbba7aa22448c8c5e57f0f53fc221",
+        "slug": "short_hair",
+        "name": "Short Hair"
+      },
+      {
+        "id": "da4da253b39a4cf49533b3c199729f5b",
+        "slug": "long_hair",
+        "name": "Long Hair"
+      },
+      {
+        "id": "38430e7a0af941769ae7854283e84a9e",
+        "slug": "bishounen",
+        "name": "Bishounen"
+      },
+      {
+        "id": "ada226f900274eada82ece4feaca922f",
+        "slug": "glasses",
+        "name": "Glasses"
+      },
+      {
+        "id": "cd17f6e251f34f8b8542fc5612b4e83b",
+        "slug": "suit",
+        "name": "Suit"
+      },
+      {
+        "id": "863318e934c947c186dc579467bdb72b",
+        "slug": "school_uniform",
+        "name": "School Uniform"
+      },
+      {
+        "id": "d07d71fad98d4d329348f7d8788de87c",
+        "slug": "facial_hair",
+        "name": "Facial Hair"
+      },
+      {
+        "id": "31a2c754305a4516b972aaea50a1ee0e",
+        "slug": "muscular",
+        "name": "Muscular"
+      },
+      {
+        "id": "9bc5e99f75d14350acda281b0fde84c5",
+        "slug": "smile",
+        "name": "Smile"
+      },
+      {
+        "id": "54ef2bcb63dc4150a083cc9a74158732",
+        "slug": "looking_at_viewer",
+        "name": "Looking at Viewer"
+      },
+      {
+        "id": "e156285ac43345438b12e2231dc806ff",
+        "slug": "looking_away",
+        "name": "Looking Away"
+      },
+      {
+        "id": "9eaa6de5aaeb4f428d754af60ff38098",
+        "slug": "holding",
+        "name": "Holding"
+      },
+      {
+        "id": "bee946f5b03041ce8a6e8a9bcf81422e",
+        "slug": "sitting",
+        "name": "Sitting"
+      },
+      {
+        "id": "fe384b9a14404931b193a6bfaf782eb1",
+        "slug": "standing",
+        "name": "Standing"
+      }
+    ],
+    "general": [
+      {
+        "id": "0cbe0043569740b8ae0278cc6cd2bc1b",
+        "slug": "long_hair",
+        "name": "Long Hair"
+      },
+      {
+        "id": "908ba29f6025481abe840ec9479612a4",
+        "slug": "short_hair",
+        "name": "Short Hair"
+      },
+      {
+        "id": "b2a1289d00264b25816c3a2b47a73969",
+        "slug": "very_long_hair",
+        "name": "Very Long Hair"
+      },
+      {
+        "id": "5db6ea9744064289b4d44fa0ad4144ff",
+        "slug": "medium_hair",
+        "name": "Medium Hair"
+      },
+      {
+        "id": "cbb8c7de48284b4b9fd28d908b09d141",
+        "slug": "blue_eyes",
+        "name": "Blue Eyes"
+      },
+      {
+        "id": "26418591ce1d430e96dfd8eac695e1fc",
+        "slug": "red_eyes",
+        "name": "Red Eyes"
+      },
+      {
+        "id": "b7f5007a9fb740de981d6dae1f71baa8",
+        "slug": "green_eyes",
+        "name": "Green Eyes"
+      },
+      {
+        "id": "d42c2a5164354f4893dbee05c3f4d6f1",
+        "slug": "brown_eyes",
+        "name": "Brown Eyes"
+      },
+      {
+        "id": "8539044a7ab24571b0c9a70c32406d14",
+        "slug": "black_eyes",
+        "name": "Black Eyes"
+      },
+      {
+        "id": "9173e4d5be0b4c66993d665727dd21b6",
+        "slug": "purple_eyes",
+        "name": "Purple Eyes"
+      },
+      {
+        "id": "79b7b142875a4bf08849df51cd3237ce",
+        "slug": "yellow_eyes",
+        "name": "Yellow Eyes"
+      },
+      {
+        "id": "e6e069d109644a088a49c01e6704e71f",
+        "slug": "silver_eyes",
+        "name": "Silver Eyes"
+      },
+      {
+        "id": "7ec958a3603949898b3d0d4b189130d4",
+        "slug": "heterochromia",
+        "name": "Heterochromia"
+      },
+      {
+        "id": "298791615935442c969f9b7252627957",
+        "slug": "glasses",
+        "name": "Glasses"
+      },
+      {
+        "id": "79c322b2d3404a31bf957520a06e945b",
+        "slug": "sunglasses",
+        "name": "Sunglasses"
+      },
+      {
+        "id": "9297715496e3450e8f494dffec92e327",
+        "slug": "animal_ears",
+        "name": "Animal Ears"
+      },
+      {
+        "id": "621e97a715b94709b4a66d723a57abd8",
+        "slug": "cat_ears",
+        "name": "Cat Ears"
+      },
+      {
+        "id": "a899e1c909fd4cedae4204f2c8520a1a",
+        "slug": "dog_ears",
+        "name": "Dog Ears"
+      },
+      {
+        "id": "2c0bd6bb88ae4d61ad627fa292a011c1",
+        "slug": "fox_ears",
+        "name": "Fox Ears"
+      },
+      {
+        "id": "146f56315884483a82f943e954414d68",
+        "slug": "rabbit_ears",
+        "name": "Rabbit Ears"
+      },
+      {
+        "id": "b4082e6a75ee4717b9aee9307c40705a",
+        "slug": "horns",
+        "name": "Horns"
+      },
+      {
+        "id": "6edaff7e46454f678f9ec00492c95017",
+        "slug": "halo",
+        "name": "Halo"
+      },
+      {
+        "id": "ce1a27c76e804f65a7ef1d2840752c55",
+        "slug": "wings",
+        "name": "Wings"
+      },
+      {
+        "id": "dd9ef4b7ff06442083a24f59013d8b6a",
+        "slug": "tail",
+        "name": "Tail"
+      },
+      {
+        "id": "f1c46128ab9041dbad58a1fed7b3e3df",
+        "slug": "tattoo",
+        "name": "Tattoo"
+      },
+      {
+        "id": "b1b96969c5e0442b9829dbfc7b1229c7",
+        "slug": "scar",
+        "name": "Scar"
+      },
+      {
+        "id": "24ba447172064f85b85bde56cfb1a8c1",
+        "slug": "blush",
+        "name": "Blush"
+      },
+      {
+        "id": "ea43d01954734e188768202e6cfbc50f",
+        "slug": "tears",
+        "name": "Tears"
+      },
+      {
+        "id": "50c00242fcba4d7d84181fbb57e4ea7b",
+        "slug": "freckles",
+        "name": "Freckles"
+      },
+      {
+        "id": "879ab77e2c0b49caae6dddc2bea19672",
+        "slug": "ahoge",
+        "name": "Ahoge"
+      },
+      {
+        "id": "2795c632dee74136ba7b1e458da0834c",
+        "slug": "fangs",
+        "name": "Fangs"
+      }
+    ],
+    "rating": [
+      {
+        "id": "ac3f453e6b6542c4a5dfcc97d807cadd",
+        "slug": "safe",
+        "name": "Safe"
+      },
+      {
+        "id": "ae249d881bb04d3db67507763ca42550",
+        "slug": "questionable",
+        "name": "Questionable"
+      },
+      {
+        "id": "d1f0002eb2d8481c91a497d27597398e",
+        "slug": "explicit",
+        "name": "Explicit"
+      }
+    ],
+    "other": [
+      {
+        "id": "04af9b3d859948d7a817fc7c2ce46568",
+        "slug": "highres",
+        "name": "High Resolution"
+      },
+      {
+        "id": "cd3d323ffdcd40b38873baca4fe9f7ff",
+        "slug": "absurdres",
+        "name": "Absurd Resolution"
+      },
+      {
+        "id": "e32d035311de444a994129215e90a527",
+        "slug": "official_art",
+        "name": "Official Art"
+      },
+      {
+        "id": "2c5640c0ac9347f08e737a73b62388c9",
+        "slug": "scan",
+        "name": "Scan"
+      },
+      {
+        "id": "f7080344b5834c37a85a725934b388ec",
+        "slug": "watermark",
+        "name": "Watermark"
+      },
+      {
+        "id": "7e28f26a43c4421f9054201fdae61b55",
+        "slug": "signature",
+        "name": "Signature"
+      },
+      {
+        "id": "9bdf1f3e25ad41fd86b8fcabfea700eb",
+        "slug": "simple_background",
+        "name": "Simple Background"
+      },
+      {
+        "id": "b29acaad96a0459f9acec885239a41e0",
+        "slug": "gradient_background",
+        "name": "Gradient Background"
+      },
+      {
+        "id": "afb9f67be3a1477f876a29cbd073f5f4",
+        "slug": "detailed_background",
+        "name": "Detailed Background"
+      },
+      {
+        "id": "cb2e345591ff4803be8c41b336a9ad66",
+        "slug": "transparent_background",
+        "name": "Transparent Background"
+      },
+      {
+        "id": "7f4ca8803e314050930b87f7cba67696",
+        "slug": "white_background",
+        "name": "White Background"
+      },
+      {
+        "id": "d6e3aaa1999c4111bb09332eca03b6e9",
+        "slug": "black_background",
+        "name": "Black Background"
+      },
+      {
+        "id": "d735748cedc64fc9ae1516bddc522145",
+        "slug": "indoor",
+        "name": "Indoor"
+      },
+      {
+        "id": "16942ad9eb4949449238b73caedbd91d",
+        "slug": "outdoor",
+        "name": "Outdoor"
+      },
+      {
+        "id": "476a5b0936b64c1b9a901b850e483499",
+        "slug": "night",
+        "name": "Night"
+      },
+      {
+        "id": "8a888aa90d764ea5a86857f052cc49b1",
+        "slug": "day",
+        "name": "Day"
+      },
+      {
+        "id": "be33cccaf75944ffb5e76c0220ca24a4",
+        "slug": "sunset",
+        "name": "Sunset"
+      },
+      {
+        "id": "0595fb4c181c42ba958a4deeab1a67e3",
+        "slug": "cityscape",
+        "name": "Cityscape"
+      },
+      {
+        "id": "7cd697972a4c4f7fa22ef2a3631df144",
+        "slug": "nature",
+        "name": "Nature"
+      },
+      {
+        "id": "188206595ccf4579bd71a905de9adef8",
+        "slug": "underwater",
+        "name": "Underwater"
+      },
+      {
+        "id": "96e768041e44474590125e6081974fbb",
+        "slug": "sky",
+        "name": "Sky"
+      },
+      {
+        "id": "ce45087eed2b4a618ce955c67235efff",
+        "slug": "food",
+        "name": "Food"
+      },
+      {
+        "id": "73a175695e994b028d186552ba4e94e9",
+        "slug": "animal",
+        "name": "Animal"
+      },
+      {
+        "id": "dc7f698e6d3d487a9f5adee564fe0496",
+        "slug": "mecha",
+        "name": "Mecha"
+      },
+      {
+        "id": "aafec976e8484562b172073bfb71671b",
+        "slug": "weapon",
+        "name": "Weapon"
+      },
+      {
+        "id": "b1a125660f204d338ac7240fb00b3437",
+        "slug": "text",
+        "name": "Text"
+      },
+      {
+        "id": "6cf336a2a97c4e6cae4610e252faf234",
+        "slug": "monochrome",
+        "name": "Monochrome"
+      },
+      {
+        "id": "d1ae0c8175844a66b67e113675d0e65b",
+        "slug": "greyscale",
+        "name": "Greyscale"
+      },
+      {
+        "id": "ac4a9ead59994d1a8e566de3bdd5da3b",
+        "slug": "sepia",
+        "name": "Sepia"
+      },
+      {
+        "id": "7ad147271f1146d580203c9ec79a5d98",
+        "slug": "dutch_angle",
+        "name": "Dutch Angle"
+      },
+      {
+        "id": "fe446ca351854e41a222f0a61b3b8d4e",
+        "slug": "close_up",
+        "name": "Close-up"
+      },
+      {
+        "id": "6184b56ce75146e4a897d05688e20706",
+        "slug": "wide_shot",
+        "name": "Wide Shot"
+      }
+    ]
+  },
+  "version": "2.0"
+}

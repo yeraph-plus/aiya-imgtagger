@@ -1,0 +1,341 @@
+{
+  "type": "3d",
+  "groups": {
+    "female": [
+      {
+        "id": "386db240ebdc45d189fb24f874c1db6e",
+        "slug": "realistic",
+        "name": "Realistic"
+      },
+      {
+        "id": "0db8882b30554c36948a575a98a4ccb5",
+        "slug": "photorealistic",
+        "name": "Photorealistic"
+      },
+      {
+        "id": "9d9596192c5346bd952f541302bdf40f",
+        "slug": "long_hair",
+        "name": "Long Hair"
+      },
+      {
+        "id": "747a69321b4d4572a5e3739b49585e43",
+        "slug": "short_hair",
+        "name": "Short Hair"
+      },
+      {
+        "id": "ea7222b9567d485fa74edeb8f230bad7",
+        "slug": "blonde_hair",
+        "name": "Blonde Hair"
+      },
+      {
+        "id": "035a4b8130604f6dbc4d0499c46dff25",
+        "slug": "brunette",
+        "name": "Brunette"
+      },
+      {
+        "id": "3edded5a38b64937902173d8daa5b17b",
+        "slug": "red_hair",
+        "name": "Red Hair"
+      },
+      {
+        "id": "2e4755353e0846539ea44ab7bcc91ddb",
+        "slug": "mature",
+        "name": "Mature"
+      },
+      {
+        "id": "187d92c64c18429482cb7ccbe5d23cc3",
+        "slug": "smile",
+        "name": "Smile"
+      },
+      {
+        "id": "9a30cf55a1184c74b6913dd0c2b73484",
+        "slug": "looking_at_viewer",
+        "name": "Looking at Viewer"
+      },
+      {
+        "id": "0c1a603a77414c71bdb9ab1514cc1d5b",
+        "slug": "looking_away",
+        "name": "Looking Away"
+      },
+      {
+        "id": "d94c7c51c88f4f2cadd5a130059dd3e1",
+        "slug": "dress",
+        "name": "Dress"
+      },
+      {
+        "id": "7accc7e110d54ec3b65cfb59abd95548",
+        "slug": "casual",
+        "name": "Casual"
+      },
+      {
+        "id": "0182449f7d95426ab4a43816f4572f20",
+        "slug": "bikini",
+        "name": "Bikini"
+      },
+      {
+        "id": "3573e908306f4baf99a54b83c109ca47",
+        "slug": "lingerie",
+        "name": "Lingerie"
+      },
+      {
+        "id": "60c660c69bec45e8906f3b3492b9fa72",
+        "slug": "standing",
+        "name": "Standing"
+      },
+      {
+        "id": "b57533743e70424786ae16985442cb1b",
+        "slug": "sitting",
+        "name": "Sitting"
+      }
+    ],
+    "male": [
+      {
+        "id": "1595408baba84b3ca3c194ca77c652f3",
+        "slug": "realistic",
+        "name": "Realistic"
+      },
+      {
+        "id": "4f900b85bb0342e29afc54bc36228d76",
+        "slug": "photorealistic",
+        "name": "Photorealistic"
+      },
+      {
+        "id": "8da46101b0644c1583423f39184a00ac",
+        "slug": "short_hair",
+        "name": "Short Hair"
+      },
+      {
+        "id": "b8d8662ff9434c7f816c108969a23f27",
+        "slug": "man",
+        "name": "Man"
+      },
+      {
+        "id": "7169ec935038491cb36b4fd65a20b8be",
+        "slug": "muscular",
+        "name": "Muscular"
+      },
+      {
+        "id": "76a158deeb8c4311bf55886a5f2a761c",
+        "slug": "beard",
+        "name": "Beard"
+      },
+      {
+        "id": "3654e8e89b2143c78d0f666307e7db37",
+        "slug": "smile",
+        "name": "Smile"
+      },
+      {
+        "id": "e2a12267425344d8aad1e1dab2e78a2d",
+        "slug": "looking_at_viewer",
+        "name": "Looking at Viewer"
+      },
+      {
+        "id": "5c54c79ef5c349598fb9f4386880f874",
+        "slug": "looking_away",
+        "name": "Looking Away"
+      },
+      {
+        "id": "7d9131c6d8b443a086b8fd2689c60424",
+        "slug": "suit",
+        "name": "Suit"
+      },
+      {
+        "id": "37f0923922044811bc100ea2ecf7f824",
+        "slug": "casual",
+        "name": "Casual"
+      },
+      {
+        "id": "ce579384abfb40459e3f2c6e3d726081",
+        "slug": "standing",
+        "name": "Standing"
+      },
+      {
+        "id": "58c7187b87cd4dcd8cf6f09d2ca201d4",
+        "slug": "sitting",
+        "name": "Sitting"
+      }
+    ],
+    "general": [
+      {
+        "id": "66a365696e884de8807e1fefe3a89b99",
+        "slug": "long_hair",
+        "name": "Long Hair"
+      },
+      {
+        "id": "61a708d7acbf4b1dbe23663df50eb05d",
+        "slug": "short_hair",
+        "name": "Short Hair"
+      },
+      {
+        "id": "8759d445304b44c7920747812377445c",
+        "slug": "medium_hair",
+        "name": "Medium Hair"
+      },
+      {
+        "id": "076f9e5708dd4d92bea2aeb1d5d47c4c",
+        "slug": "blue_eyes",
+        "name": "Blue Eyes"
+      },
+      {
+        "id": "4c6d9422dd9745a0b4f31e27d19cc376",
+        "slug": "red_eyes",
+        "name": "Red Eyes"
+      },
+      {
+        "id": "cd15639063324860a7720a02619b2947",
+        "slug": "green_eyes",
+        "name": "Green Eyes"
+      },
+      {
+        "id": "922c0b73a7114f5d8f39aab55630e2d8",
+        "slug": "brown_eyes",
+        "name": "Brown Eyes"
+      },
+      {
+        "id": "624cc8ec91c440dd9051f48222383aa5",
+        "slug": "black_eyes",
+        "name": "Black Eyes"
+      },
+      {
+        "id": "24d9ee42829a4216a1f09ef55ef93209",
+        "slug": "heterochromia",
+        "name": "Heterochromia"
+      },
+      {
+        "id": "84d33785805e4a7585fcb18ac22594b0",
+        "slug": "glasses",
+        "name": "Glasses"
+      },
+      {
+        "id": "8cb3b903a8c0400594b3c9d272e44a05",
+        "slug": "sunglasses",
+        "name": "Sunglasses"
+      },
+      {
+        "id": "541d2b5baf4249f5b23da5553becac23",
+        "slug": "tattoo",
+        "name": "Tattoo"
+      },
+      {
+        "id": "bedcf62077634dafac6d6a1b0d6ee838",
+        "slug": "scar",
+        "name": "Scar"
+      },
+      {
+        "id": "14f043b03a15436282035b8abcf49af2",
+        "slug": "freckles",
+        "name": "Freckles"
+      },
+      {
+        "id": "5fe6816796394ad189cca18a5e948c7a",
+        "slug": "facial_hair",
+        "name": "Facial Hair"
+      },
+      {
+        "id": "f7d402b181fd41ed99a936c4f4046527",
+        "slug": "beard",
+        "name": "Beard"
+      }
+    ],
+    "rating": [
+      {
+        "id": "fccf0d4b674449e6bad156f4b789b85b",
+        "slug": "safe",
+        "name": "Safe"
+      },
+      {
+        "id": "7fd3949d31d94c1eaf340b0812dab97a",
+        "slug": "questionable",
+        "name": "Questionable"
+      },
+      {
+        "id": "8511ba482f2b40a0938c0e2131e33c14",
+        "slug": "explicit",
+        "name": "Explicit"
+      }
+    ],
+    "other": [
+      {
+        "id": "265ea85160b449e7b402eebdd71440b5",
+        "slug": "highres",
+        "name": "High Resolution"
+      },
+      {
+        "id": "f518e0277ec2474c974e244ef70b3c70",
+        "slug": "absurdres",
+        "name": "Absurd Resolution"
+      },
+      {
+        "id": "64f3a424f5214983abb5235f4608deb1",
+        "slug": "realistic",
+        "name": "Realistic"
+      },
+      {
+        "id": "457ff01741b24e6e9fa7c5efe3b47d94",
+        "slug": "photorealistic",
+        "name": "Photorealistic"
+      },
+      {
+        "id": "9ed4d33f25d74e088db9e4c4b8b68616",
+        "slug": "3d_render",
+        "name": "3D Render"
+      },
+      {
+        "id": "abe59d76e5da4ac1a7415a355b625966",
+        "slug": "indoor",
+        "name": "Indoor"
+      },
+      {
+        "id": "c56b39b9a450493b9cf210cf7b316b73",
+        "slug": "outdoor",
+        "name": "Outdoor"
+      },
+      {
+        "id": "6fd74d5bd0824c78ae0bc6c7c63e3e1c",
+        "slug": "simple_background",
+        "name": "Simple Background"
+      },
+      {
+        "id": "92c13dc173b44ba4a769a1e76cc44069",
+        "slug": "detailed_background",
+        "name": "Detailed Background"
+      },
+      {
+        "id": "42dcf1245bb64a7e8399b9d6a8731233",
+        "slug": "night",
+        "name": "Night"
+      },
+      {
+        "id": "12f42b1e5f944c97bb9013db9c25b4a3",
+        "slug": "day",
+        "name": "Day"
+      },
+      {
+        "id": "81648a796d0a41898aef6ed5d0864c7d",
+        "slug": "photo",
+        "name": "Photo"
+      },
+      {
+        "id": "684cd8c1ac5b415887e8375556917062",
+        "slug": "portrait",
+        "name": "Portrait"
+      },
+      {
+        "id": "fb6e4176c7ab43eab113e9bbc3459b9d",
+        "slug": "close_up",
+        "name": "Close-up"
+      },
+      {
+        "id": "a6bb57c5d50948f1976fb4580d8e9ac4",
+        "slug": "wide_shot",
+        "name": "Wide Shot"
+      },
+      {
+        "id": "23172cb2119a47e09279b3604ca81a9f",
+        "slug": "full_body",
+        "name": "Full Body"
+      }
+    ]
+  },
+  "version": "2.0"
+}
