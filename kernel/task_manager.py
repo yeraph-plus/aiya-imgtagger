@@ -8,6 +8,12 @@ from kernel.models import Task, TaskState, FolderTagData, PresetTagSet
 from kernel.agent import AIAgentClient
 from kernel.storage import Storage
 
+_ACTIVE_STATES = (
+    TaskState.QUEUED, TaskState.PRELOADED, TaskState.PRELOADING,
+    TaskState.LOADED, TaskState.PROCESSING,
+)
+_PENDING_DEQUEUE_STATES = (TaskState.PRELOADED, TaskState.QUEUED)
+
 
 class AgentWorker(QThread):
     task_done = pyqtSignal(str, bool, str)
@@ -21,7 +27,11 @@ class AgentWorker(QThread):
         self._cancelled = False
 
     def run(self):
-        asyncio.run(self._run_all())
+        try:
+            asyncio.run(self._run_all())
+        except Exception:
+            pass
+        self.task_done.emit("", True, "")  # sentinel: worker exited
 
     def cancel(self):
         self._cancelled = True
@@ -43,8 +53,16 @@ class AgentWorker(QThread):
                     self.task_done.emit(task.id, True, "")
                     continue
 
+                if self._cancelled:
+                    bus.set_task_state(task.id, TaskState.QUEUED)
+                    break
+
                 try:
                     tags = await client.analyze_folder(task.images, preset=self._preset)
+
+                    if self._cancelled:
+                        bus.set_task_state(task.id, TaskState.QUEUED)
+                        break
 
                     if not tags:
                         error_msg = "API returned no valid tags. ai_tags.json not created."
@@ -62,6 +80,9 @@ class AgentWorker(QThread):
                     self.task_done.emit(task.id, True, "")
                 except Exception as e:
                     error_msg = str(e)
+                    if self._cancelled:
+                        bus.set_task_state(task.id, TaskState.QUEUED)
+                        break
                     bus.set_task_state(task.id, TaskState.ERROR, error_message=error_msg)
                     self.folder_completed.emit(task.name)
                     self.task_done.emit(task.id, False, error_msg)
@@ -84,14 +105,21 @@ class TaskManager(QObject):
         self._cancelled = False
         self._total = 0
         self._completed_count = 0
+        self._active_workers = 0
+        self._finished_emitted = False
 
     def dequeue_task(self) -> Optional[Task]:
         with QMutexLocker(self._mutex):
+            if self._cancelled:
+                return None
             for task in self._bus.get_all_tasks():
-                if task.state in (TaskState.PRELOADED, TaskState.QUEUED):
-                    self._bus.set_task_state(task.id, TaskState.QUEUED)
-                    return task
-            return None
+                if task.state in _PENDING_DEQUEUE_STATES:
+                    task_id = task.id
+                    break
+            else:
+                return None
+        self._bus.set_task_state(task_id, TaskState.QUEUED)
+        return self._bus.get_task(task_id)
 
     def start(self):
         tasks = self._bus.get_all_tasks()
@@ -102,39 +130,53 @@ class TaskManager(QObject):
             if task.state == TaskState.PRELOADED:
                 self._bus.set_task_state(task.id, TaskState.QUEUED)
 
-        for i in range(AGENT_WORKER_COUNT):
+        worker_count = max(1, AGENT_WORKER_COUNT)
+        self._active_workers = worker_count
+        for i in range(worker_count):
             worker = AgentWorker(self, self._model, self._preset)
             worker.task_done.connect(self._on_task_done)
             worker.folder_completed.connect(self.folder_completed)
+            worker.finished.connect(worker.deleteLater)
             worker.start()
             self._workers.append(worker)
 
     def _on_task_done(self, task_id: str, success: bool, error: str):
-        self._completed_count += 1
-        self.progress.emit(self._completed_count, self._total)
+        if task_id:
+            self._completed_count += 1
+            self.progress.emit(self._completed_count, max(self._total, self._completed_count))
 
-        task = self._bus.get_task(task_id)
-        task_name = task.name if task else task_id
-        if not success and error:
-            self.folder_error.emit(task_name, error)
+            task = self._bus.get_task(task_id)
+            task_name = task.name if task else task_id
+            if not success and error:
+                self.folder_error.emit(task_name, error)
 
-        all_done = True
-        for task in self._bus.get_all_tasks():
-            if task.state in (TaskState.QUEUED, TaskState.PRELOADED, TaskState.PRELOADING,
-                              TaskState.LOADED, TaskState.PROCESSING):
-                all_done = False
-                break
+        with QMutexLocker(self._mutex):
+            self._active_workers -= 1
+            if self._active_workers < 0:
+                self._active_workers = 0
+            should_finish = self._active_workers == 0 or self._cancelled
+            if should_finish and self._finished_emitted:
+                should_finish = False
 
-        if all_done:
+        if should_finish:
+            self._finished_emitted = True
             self.finished.emit()
 
     def cancel(self):
-        self._cancelled = True
+        with QMutexLocker(self._mutex):
+            if self._cancelled:
+                return
+            self._cancelled = True
         for worker in self._workers:
             if worker.isRunning():
                 worker.cancel()
-                worker.wait(1000)
+        for worker in self._workers:
+            if worker.isRunning():
+                worker.wait(2000)
         self.cancelled.emit()
+        if self._active_workers == 0 and not self._finished_emitted:
+            self._finished_emitted = True
+            self.finished.emit()
 
     def get_total(self) -> int:
         return self._total

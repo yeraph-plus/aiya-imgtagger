@@ -28,6 +28,11 @@ class ImageGridView(QScrollArea):
         self._show_empty()
 
     def load_from_bus(self, bus, task_id: str):
+        old = self.widget()
+        if old is not None:
+            self.setWidget(None)
+            old.deleteLater()
+
         self._container = QWidget()
         self._hbox = QHBoxLayout(self._container)
         self._hbox.setContentsMargins(4, 4, 4, 4)

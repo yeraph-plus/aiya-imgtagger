@@ -5,6 +5,8 @@ from typing import Dict, List, Optional
 
 from config import DATA_DIR, FREE_FORM_TAG_CATEGORIES, ALL_TAG_CATEGORIES, TAGGING_RULES, CATEGORY_PURPOSES
 from kernel.models import PresetTagSet, PresetTag
+from utils.json_io import write_json_atomic
+from utils.slug import sanitize_slug
 
 CONSTRAINED_CATEGORIES = [c for c in ALL_TAG_CATEGORIES if c not in FREE_FORM_TAG_CATEGORIES]
 
@@ -50,10 +52,7 @@ class PresetService:
         filepath = cls._preset_path(preset.type)
         data = preset.to_dict()
         data["version"] = "2.0"
-        filepath.write_text(
-            json.dumps(data, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+        write_json_atomic(filepath, data, ensure_ascii=False)
 
     @classmethod
     def delete(cls, preset_type: str):
@@ -63,6 +62,9 @@ class PresetService:
 
     @classmethod
     def add_tag(cls, preset: PresetTagSet, category: str, slug: str, name: str, description: str = "") -> Optional[PresetTag]:
+        slug = sanitize_slug(slug)
+        if not slug:
+            return None
         if category not in preset.groups:
             return None
         for t in preset.groups[category]:
@@ -206,4 +208,5 @@ class PresetService:
 
     @classmethod
     def _preset_path(cls, preset_type: str) -> Path:
-        return DATA_DIR / f"tags_{preset_type}.json"
+        safe = sanitize_preset_name(preset_type)
+        return DATA_DIR / f"tags_{safe}.json"

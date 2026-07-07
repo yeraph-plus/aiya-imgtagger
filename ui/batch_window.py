@@ -33,6 +33,7 @@ class BatchTaggerWindow(QMainWindow):
 
         self._task_manager: Optional[TaskManager] = None
         self._ai_processing: bool = False
+        self._batch_errors: list[tuple[str, str]] = []
 
         self._setup_toolbar()
         self._setup_ui()
@@ -149,6 +150,7 @@ class BatchTaggerWindow(QMainWindow):
         self._model_worker = ModelListFetcher()
         self._model_worker.finished.connect(self._on_models_loaded)
         self._model_worker.error.connect(self._on_models_error)
+        self._model_worker.finished.connect(self._model_worker.deleteLater)
         self._model_worker.start()
 
     def _on_models_loaded(self, models: list):
@@ -287,6 +289,8 @@ class BatchTaggerWindow(QMainWindow):
         self._safe_disconnect(self._batch_btn.clicked)
         self._batch_btn.clicked.connect(self._on_stop_batch)
 
+        self._batch_errors = []
+
         self._progress_bar.setVisible(True)
         self._progress_bar.setMaximum(total)
         self._progress_bar.setValue(0)
@@ -311,7 +315,7 @@ class BatchTaggerWindow(QMainWindow):
         self._update_status(f"Done: {name}")
 
     def _on_batch_folder_error(self, name: str, error: str):
-        QMessageBox.critical(self, f"Error - {name}", error)
+        self._batch_errors.append((name, error))
         self._update_status(f"Error: {name}")
 
     def _on_batch_finished(self):
@@ -322,8 +326,17 @@ class BatchTaggerWindow(QMainWindow):
         self._batch_btn.clicked.connect(self._on_batch_ai)
         self._bus.refresh()
         self._update_controls()
-        self._update_status("Batch complete")
+        errors = self._batch_errors
+        self._batch_errors = []
         self._task_manager = None
+        if errors:
+            preview = "\n".join(f"- {n}: {e[:120]}" for n, e in errors[:8])
+            tail = f"\n... and {len(errors) - 8} more." if len(errors) > 8 else ""
+            QMessageBox.warning(
+                self, "Batch Errors",
+                f"{len(errors)} folder(s) failed:\n{preview}{tail}",
+            )
+        self._update_status("Batch complete")
 
     def closeEvent(self, event):
         if self._task_manager:

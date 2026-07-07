@@ -157,7 +157,7 @@ Free-form categories allow the AI to invent values. Preset-constrained categorie
 |---------|---------|-------------|
 | `PRELOAD_TASK_COUNT` | `5` | Concurrent image preload workers |
 | `AGENT_WORKER_COUNT` | `2` | Concurrent AI agent processing threads |
-| `MAX_IMAGES_PER_REQUEST` | `6` | Images sent per API call |
+| `MAX_IMAGES_PER_REQUEST` | `6` | Images sent per API call (randomly sampled from each folder) |
 | `MAX_IMAGE_WIDTH` | `1000` | Max width before API upload |
 | `JPEG_QUALITY` | `85` | JPEG compression quality |
 | `THUMB_SIZE` | `180` | Preview thumbnail pixel size |
@@ -211,12 +211,22 @@ python main.py --mode editor
 pip install -r requirements.txt
 ```
 
-Create a `.env` file:
+Create a `.env` file (script mode) **or** a `settings.json` next to the exe (frozen mode):
 
 ```
+# .env
 API_KEY=your-api-key
 API_URL=https://your-api-endpoint/v1
 ```
+
+```json
+{
+  "API_KEY": "your-api-key",
+  "API_URL": "https://your-api-endpoint/v1"
+}
+```
+
+> Config precedence: `settings.json` > `.env`/environment variables > defaults. When frozen into an exe, `BASE_DIR` (where `settings.json` and `data/` are read/written) points to the directory containing the executable, so presets and config persist outside the bundle. A blank `settings.json` is auto-generated on first launch of the frozen exe.
 
 ## Requirements
 

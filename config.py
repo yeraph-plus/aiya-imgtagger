@@ -1,4 +1,6 @@
+import json
 import os
+import sys
 from pathlib import Path
 
 try:
@@ -6,13 +8,41 @@ try:
 except ImportError:
     load_dotenv = lambda _: None
 
-BASE_DIR = Path(__file__).resolve().parent
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys.executable).resolve().parent
+else:
+    BASE_DIR = Path(__file__).resolve().parent
 
-load_dotenv(BASE_DIR / ".env")
+ENV_PATH = BASE_DIR / ".env"
+SETTINGS_PATH = BASE_DIR / "settings.json"
 
-# 环境变量
-API_KEY = os.getenv("API_KEY", "")
-API_URL = os.getenv("API_URL", "https://api.openai.com/v1").rstrip("/")
+
+def _load_settings() -> dict:
+    if SETTINGS_PATH.exists():
+        try:
+            return json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            return {}
+    return {}
+
+
+load_dotenv(ENV_PATH)
+
+_settings = _load_settings()
+
+# 冻结 exe 首次运行：在 exe 同级目录生成 settings.json 模板，方便用户填写
+if getattr(sys, "frozen", False) and not SETTINGS_PATH.exists():
+    try:
+        SETTINGS_PATH.write_text(
+            json.dumps({"API_KEY": "", "API_URL": "https://api.openai.com/v1"}, indent=2),
+            encoding="utf-8",
+        )
+    except OSError:
+        pass
+
+# config 链：settings.json > .env(环境变量) > 默认值
+API_KEY = _settings.get("API_KEY") or os.getenv("API_KEY", "")
+API_URL = (_settings.get("API_URL") or os.getenv("API_URL", "https://api.openai.com/v1") or "").rstrip("/")
 
 # 预设标签模板存放目录
 DATA_DIR = BASE_DIR / "data"

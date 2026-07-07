@@ -1,5 +1,6 @@
 import sys
 import argparse
+import logging
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -11,6 +12,10 @@ from ui.preset_editor import PresetEditorWindow
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    )
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["gallery", "batch", "editor"], default="gallery",
                         help="Window mode (default: gallery)")

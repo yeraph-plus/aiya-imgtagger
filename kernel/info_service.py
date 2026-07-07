@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from config import ALL_TAG_CATEGORIES, GALLERY_INFO_FILENAME
+from utils.json_io import write_json_atomic
 
 
 @dataclass
@@ -71,8 +72,4 @@ class InfoService:
 
     @staticmethod
     def save(folder: Path, info: GalleryInfo):
-        data = info.to_dict()
-        InfoService.path(folder).write_text(
-            json.dumps(data, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+        write_json_atomic(InfoService.path(folder), info.to_dict(), ensure_ascii=False)

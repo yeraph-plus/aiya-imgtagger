@@ -12,6 +12,7 @@ from PyQt6.QtCore import Qt, pyqtSignal
 from config import CONSTRAINED_CATEGORIES
 from kernel.models import PresetTagSet, PresetTag
 from kernel.prompt_service import PresetService
+from utils.slug import sanitize_slug
 
 _COL_SLUG = 0
 _COL_NAME = 1
@@ -155,8 +156,9 @@ class _TagGroupTable(QWidget):
         self._submit_btn.setText("Add")
 
     def _submit(self):
-        slug = self._slug_input.text().strip().lower().replace(" ", "_")
+        slug = sanitize_slug(self._slug_input.text())
         if not slug:
+            QMessageBox.warning(self, "Invalid Slug", "Slug must contain at least one alphanumeric character.")
             return
 
         if self._editing_tag_id:

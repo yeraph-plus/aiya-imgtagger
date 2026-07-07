@@ -3,14 +3,14 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from PyQt6.QtCore import QObject, QThread, pyqtSignal
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QPixmapCache
 
 from config import PRELOAD_TASK_COUNT
 from kernel.models import Task, TaskState
 from kernel.scanner import scan_entry, scan_images
 from kernel.storage import Storage
 from kernel.info_service import InfoService
-from utils.image_utils import load_pixmap, THUMB_SIZE
+from utils.image_utils import load_thumbnail, THUMB_SIZE
 
 
 class _PreloadWorker(QThread):
@@ -24,8 +24,7 @@ class _PreloadWorker(QThread):
     def run(self):
         for img_path in self._images:
             try:
-                with open(img_path, "rb") as f:
-                    f.read()
+                load_thumbnail(img_path, THUMB_SIZE)
             except Exception:
                 pass
         self.done.emit(self._task_id)
@@ -42,7 +41,6 @@ class DataBus(QObject):
         self._tasks: Dict[str, Task] = OrderedDict()
         self._entry_path: Optional[Path] = None
         self._selected_task_id: str = ""
-        self._thumbnail_cache: Dict[str, Dict[str, QPixmap]] = {}
         self._preload_count: int = PRELOAD_TASK_COUNT
         self._preload_workers: list = []
 
@@ -63,7 +61,7 @@ class DataBus(QObject):
     def load_entry(self, path: Path):
         self._stop_preload_workers()
         self._tasks.clear()
-        self._thumbnail_cache.clear()
+        QPixmapCache.clear()
         self._selected_task_id = ""
         self._entry_path = path
 
@@ -119,6 +117,7 @@ class DataBus(QObject):
         worker = _PreloadWorker(task.id, task.images)
         worker.done.connect(self._on_preload_done)
         worker.finished.connect(lambda w=worker: self._cleanup_worker(w))
+        worker.finished.connect(worker.deleteLater)
         self._preload_workers.append(worker)
         worker.start()
 
@@ -133,6 +132,7 @@ class DataBus(QObject):
             if worker.isRunning():
                 worker.quit()
                 worker.wait(1000)
+            worker.deleteLater()
         self._preload_workers.clear()
 
     def _on_preload_done(self, task_id: str):
@@ -161,7 +161,7 @@ class DataBus(QObject):
         task = self._tasks.get(task_id)
         if not task or image_index >= len(task.images):
             return None
-        return load_pixmap(task.images[image_index], THUMB_SIZE, THUMB_SIZE)
+        return load_thumbnail(task.images[image_index], THUMB_SIZE)
 
     def get_all_thumbnails(self, task_id: str) -> List[QPixmap]:
         task = self._tasks.get(task_id)
@@ -169,7 +169,7 @@ class DataBus(QObject):
             return []
         thumbs = []
         for img_path in task.images:
-            pix = load_pixmap(img_path, THUMB_SIZE, THUMB_SIZE)
+            pix = load_thumbnail(img_path, THUMB_SIZE)
             if pix and not pix.isNull():
                 thumbs.append(pix)
         return thumbs
@@ -207,7 +207,7 @@ class DataBus(QObject):
 
     def refresh(self):
         if self._entry_path:
-            self._thumbnail_cache.clear()
+            QPixmapCache.clear()
             self.load_entry(self._entry_path)
 
     def shutdown(self):
